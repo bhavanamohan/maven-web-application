@@ -7,15 +7,15 @@ stage('code from git')
   }
   stage('maven package')
   {
-    sh {mavenhome}/bin/mvn clean package
+    sh ${mavenhome}/bin/mvn clean package
   }
   stage('sonarqube reports')
   {
-    sh {mavenhome}/bin/mvn sonar:sonar
+    sh ${mavenhome}/bin/mvn sonar:sonar
   }
   stage('store package in nexus')
   {
-    sh {mavenhome}/bin/mvn deploy
+    sh ${mavenhome}/bin/mvn deploy
   }
   stage('deploy to tomcat')
   {
