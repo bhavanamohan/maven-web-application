@@ -1,6 +1,7 @@
-def mavenhome=tool name:'MavenExample',type:'maven' 
 node()
 {
+def mavenhome=tool name:'MavenExample',type:'maven' 
+
 stage('code from git')
   {
     git 'https://github.com/bhavanamohan/maven-web-application.git'
